@@ -20,6 +20,9 @@ See [np](https://github.com/sindresorhus/np#usage)
 
 ## Install
 
+- The `npm login` password is the `Personal access tokens (PAT)` value, not the Github account information.
+- Create a token by adding `repo` and `read:packages` permissions at <https://github.com/settings/tokens>
+
 ```sh
 npm login --registry=https://npm.pkg.github.com --scope=@ownername
 npm install @ownername/module-name
