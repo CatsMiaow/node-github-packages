@@ -1,6 +1,6 @@
 {
   "name": "@ownername/module-name",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Github Packages Template for Node.js",
   "main": "dist",
   "types": "dist",
