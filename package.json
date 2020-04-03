@@ -1,0 +1,48 @@
+{
+  "name": "@ownername/module-name",
+  "version": "0.0.0",
+  "description": "Github Packages Template for Node.js",
+  "main": "dist",
+  "types": "dist",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint --ext .ts .",
+    "build": "del-cli dist && tsc",
+    "prepare": "npm run lint && npm run build",
+    "release": "np --no-release-draft --no-publish"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": "github:ownername/module-name",
+  "bugs": {
+    "url": "https://github.com/ownername/module-name/issues"
+  },
+  "author": "ownername",
+  "homepage": "https://github.com/ownername/module-name#readme",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^25.1.5",
+    "@types/node": "^13.11.0",
+    "@typescript-eslint/eslint-plugin": "^2.26.0",
+    "@typescript-eslint/parser": "^2.26.0",
+    "del-cli": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-typescript": "^7.2.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.8.2",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "jest": "^25.2.6",
+    "np": "^6.2.0",
+    "ts-jest": "^25.3.0",
+    "typescript": "^3.8.3"
+  }
+}
