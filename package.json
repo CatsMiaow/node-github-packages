@@ -1,6 +1,6 @@
 {
   "name": "@ownername/module-name",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "Github Packages Template for Node.js",
   "main": "dist",
   "types": "dist",
@@ -15,7 +15,7 @@
     "lint": "eslint --ext .ts .",
     "build": "del-cli dist && tsc",
     "prepare": "npm run lint && npm run build",
-    "release": "np --no-release-draft --no-publish"
+    "release": "np --no-release-draft"
   },
   "publishConfig": {
     "access": "restricted",
