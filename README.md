@@ -2,9 +2,9 @@
 
 ## Fix it
 
-In [package.json](./package.json) and [README.md](./README.md), replace `ownername` and `module-name` with your own. \
-Based on this repository, `ownername` is `catsmiaow` and `module-name` is `node-github-packages` \
-Do not delete `@`
+- In [package.json](./package.json) and [README.md](./README.md), replace `ownername` and `module-name` with your own. \
+- Based on this repository, `ownername` is `catsmiaow` and `module-name` is `node-github-packages` \
+- Do not delete `@`
 
 ## Publish
 
