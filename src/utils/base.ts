@@ -1,8 +1,9 @@
 export type TemplateParameter = unknown[];
 
-function template<T>(templateData: TemplateStringsArray, param: T[], delimiter: string = '\n'): string {
+function template<T>(templateData: TemplateStringsArray, param: T[], delimiter = '\n'): string {
   let output = '';
   for (let i = 0; i < param.length; i += 1) {
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     output += templateData[i] + param[i];
   }
   output += templateData[param.length];
@@ -24,7 +25,7 @@ export function isObject<T>(value: T): value is T {
   return value !== null && typeof value === 'object' && Array.isArray(value) === false;
 }
 
-export async function delay(second: number = 3): Promise<void> {
+export async function delay(second = 3): Promise<void> {
   return new Promise((resolve: () => void): void => {
     setTimeout(resolve, second * 1000);
   });

@@ -8,9 +8,6 @@ module.exports = {
   // Stop running tests after `n` failures
   bail: true,
 
-  // Respect "browser" field in package.json when resolving modules
-  // browser: false,
-
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "/private/var/folders/hx/d5nhg4153c10j_4mb893l3lm0000gp/T/jest_dy",
 
@@ -30,6 +27,9 @@ module.exports = {
   // coveragePathIgnorePatterns: [
   //   "/node_modules/"
   // ],
+
+  // Indicates which provider should be used to instrument code for coverage
+  coverageProvider: "v8",
 
   // A list of reporter names that Jest uses when writing coverage reports
   // coverageReporters: [
@@ -58,7 +58,11 @@ module.exports = {
   // globalTeardown: undefined,
 
   // A set of global variables that need to be available in all test environments
-  // globals: {},
+  globals: {
+    "ts-jest": {
+      "tsconfig": "tsconfig.json"
+    }
+  },
 
   // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
   // maxWorkers: "50%",
@@ -91,7 +95,7 @@ module.exports = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'ts-jest',
+  preset: "ts-jest",
 
   // Run tests from one or more projects
   // projects: undefined,
@@ -128,6 +132,9 @@ module.exports = {
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
   // setupFilesAfterEnv: [],
 
+  // The number of seconds after which a test is considered as slow and reported as such in the results.
+  // slowTestThreshold: 5,
+
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
   // snapshotSerializers: [],
 
@@ -141,15 +148,16 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   "**/__tests__/**/*.[jt]s?(x)",
-  //   "**/?(*.)+(spec|test).[tj]s?(x)"
-  // ],
+  testMatch: [
+    // "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/dist/"
+  ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
@@ -164,14 +172,15 @@ module.exports = {
   // testURL: "http://localhost",
 
   // Setting this value to "fake" allows the use of fake timers for functions such as "setTimeout"
-  timers: "fake",
+  // timers: "real",
 
   // A map from regular expressions to paths to transformers
   // transform: undefined,
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   // transformIgnorePatterns: [
-  //   "/node_modules/"
+  //   "/node_modules/",
+  //   "\\.pnp\\.[^\\/]+$"
   // ],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
